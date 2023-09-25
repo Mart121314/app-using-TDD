@@ -55,9 +55,9 @@ function inchToNanometerTest(){
 }
 
 
-const arguments = process.argv;
-const inches = parseFloat(arguments[2]);
-const output = arguments[3].toLowerCase();
+const processArguments = process.argv;
+const inches = parseFloat(processArguments[2]);
+const output = processArguments[3].toLowerCase();
 
 function convertInches (inches,output){
   if (output === "-mm"){
@@ -71,7 +71,7 @@ function convertInches (inches,output){
   } else if (output == "-nanometer"){
     return (inchToNanometer(inches)).toFixed(2);
   } else {
-    console.log("Please enter a valid output unit");
+    console.log("xxPlease enter a valid output unit");
     return null;
   }
 }
@@ -86,3 +86,4 @@ if (result !== null){
 
 inchToNanometerTest();
 
+export { convertInches, inchToMM, inchToCM, inchToM, inchToMicrometer, inchToNanometer };
