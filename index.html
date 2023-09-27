@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oppgave</title>
-  </head>
-
-  <body>
-    <div>
-      <h1>Online converter!</h1>
-      <ul>
-        <li>
-          <input type="text" id="inches" value="0" /><span>Millimeter</span>
-        </li>
-        <li><input type="text" id="cm" value="0" /><span>Centimeter</span></li>
-        <li><input type="text" id="m" value="0" /><span>Meter</span></li>
-        <li><input type="text" id="nm" value="0" /><span>Manometer</span></li>
-        <li>
-          <input type="text" id="micrometer" value="0" /><span>Micrometer</span>
-        </li>
-      </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inch Converter</title>
+</head>
+<body>
+    <h1>Inch Converter</h1>
+    
+    <label for="inches">Inches:</label>
+    <input type="number" id="inches" placeholder="Enter inches">
+    
+    <label for="output">Output unit:</label>
+    <select id="output">
+        <option value="-mm">Millimeters (mm)</option>
+        <option value="-cm">Centimeters (cm)</option>
+        <option value="-m">Meters (m)</option>
+        <option value="-nanometer">Nanometers (nm)</option>
+        <option value="-micrometer">Micrometers (µm)</option>
+    </select>
+    
+    <button id="convertButton">Convert</button>
+    
+    <div id="result">
+        Conversion results:
     </div>
-    <script src="convert.js"></script>
-  </body>
+
+    <script type="module" src="htmlConvert.mjs"></script>
+</body>
 </html>
