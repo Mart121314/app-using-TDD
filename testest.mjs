@@ -7,6 +7,7 @@ export function test(evaluation, description) {
         console.log(`🔴 Test: ${description}`);
       }
     } catch (error) {
-      console.log(`🔴 Test: ${description}`);
+      console.log(`🔴 error Test: ${description}`);
+    
     }
   }

@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inches Converter</title>
-</head>
-<body>
-  <h1>Inches Converter</h1>
-  <form>
-    <label for="inchesInput">Enter inches:</label>
-    <input type="number" id="inchesInput" step="0.01" required>
-    <br>
-    <label for="output">Select output unit:</label>
-    <select id="output">
-      <option value="mm">Millimeters (mm)</option>
-      <option value="cm">Centimeters (cm)</option>
-      <option value="m">Meters (m)</option>
-      <option value="micrometer">Micrometers (µm)</option>
-      <option value="nm">Nanometers (nm)</option>
-    </select>
-    <br>
-    <button type="button" onclick="convert()">Convert</button>
-  </form>
-  <div id="Result"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inches Converter</title>
+  </head>
+  <body>
+    <h1>Inches Converter</h1>
+    <form>
+      <label for="inchesInput">Enter inches:</label>
+      <input type="number" id="inchesInput" step="0.01" required />
+      <br />
+      <label for="output">Select output unit:</label>
+      <select id="output">
+        <option value="mm">Millimeters (mm)</option>
+        <option value="cm">Centimeters (cm)</option>
+        <option value="m">Meters (m)</option>
+        <option value="micrometer">Micrometers (µm)</option>
+        <option value="nm">Nanometers (nm)</option>
+      </select>
+      <br />
+      <button id="shitbutton" type="button">Convert</button>
+      <ul id="Resulta"></ul>
+    </form>
+    <div id="Result"></div>
 
-  <script type="module" src="./your-script.js"></script>
-</body>
+    <script type="module" src="./htmlConvert.mjs"></script>
+  </body>
 </html>
