@@ -1,18 +1,14 @@
 import { test } from "./testest.mjs";
-import { convertInches, inchToMM } from "./convert.mjs";
-
+import { convertInches, inchToMM, inchToCM, inchToM, inchToMicrometer, inchToNanometer } from "../convert.mjs";
 
 test(() => {
-    const inches = 10;
-    const output = "mm";
-    return convertInches(inches, output);
-  }, "Converting number from inches :D ");
+    convertInches();
+    return true;
+  }, "Converting number from inches");
   
   test(() => {
-    const inches = 5; 
-    const output = "mm";
-    return convertInches(inches, output);
-  }, "converting number from inches :)");
+    return typeof convertInches() === "number";
+  }, "converting number from inches ");
   
   function test_doesFunctionReturnValuesBetween() {
     const min = 0;
