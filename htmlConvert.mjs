@@ -1,45 +1,32 @@
-import { convertInches } from "./convert.mjs";
+import { convertInches, inchToMM, inchToCM, inchToM, inchToMicrometer, inchToNanometer } from "./convert.mjs";
 
-let min = 0;
-let max = 0;
+function convert() {
+    console.log(convert()); 
 
-if (isThisRunningInBrowser()) {
-   const bt = document.getElementById("convertButton");
-   bt.addEventListener("click", () => {
-        const inches = document.getElementById("inches").value;
-        const output = document.getElementById("output").value;
-        const result = convertInches(inches, output);
-        document.getElementById("result").innerHTML = result;
-    });
-}
+    const inchesInput = parseFloat(document.getElementById("inchesInput").value);
+    const outputSelect = document.getElementById("output");
+    const selectedOutput = outputSelect.options[outputSelect.selectedIndex].value;
 
-console.log(outputNumber(min, max));
+    const conversionFunctions = {
+        "mm": inchToMM,
+        "cm": inchToCM,
+        "m": inchToM,
+        "micrometer": inchToMicrometer,
+        "nm": inchToNanometer
+    };
 
-function getLimits() {
-    if (isThisRunningInBrowser()) {
-        min = document.getElementById("min").value;
-        max = document.getElementById("max").value;
+    let result;
+
+    if (isNaN(inchesInput)) {
+        result = "Please enter a valid number";
     } else {
-        min = process.argv[2];
-        max = process.argv[3];
-    }
-    min = parseFloat(min);
-    max = parseFloat(max);
-}
-
-function outputNumber() {
-    return convertInches(min, max);
-}
-
-function isThisRunningInBrowser() {
-    try {
-        if (document) {
-            return true;
+        const conversionFunction = conversionFunctions[selectedOutput];
+        if (conversionFunction) {
+            result = conversionFunction(inchesInput).toFixed(2) + " " + selectedOutput;
+        } else {
+            result = "Please enter a valid output";
         }
-    } catch (error) {
-        return false;
     }
-    return false;
-}
 
-export { getLimits, outputNumber };
+    document.getElementById("Result").textContent = result;
+}
